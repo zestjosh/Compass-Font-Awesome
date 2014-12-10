@@ -7,7 +7,7 @@ Font-Awesome scss for Compass by Flagship.
 
 * Replace genericons with font-awesome in assets/flagship/scss/style.scss and assets/flagship/scss/editor-style.scss
 
-* Remove genericons in functions.php
+* Remove genericons in theme/functions.php
 ```php
 // http://themehybrid.com/docs/hybrid-core-styles
 add_theme_support( 'hybrid-core-styles', array( 'style', 'google-fonts' ) );
