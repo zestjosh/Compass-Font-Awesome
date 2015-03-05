@@ -89,6 +89,9 @@ a[href^="tel:"]::before {
 
 /* Menu Icons
 ---------------------- */
+.menu-button::before {
+	content: '\f0c9';
+}
 
 /* Social Icons */
 // Icons meant to be boxed in
