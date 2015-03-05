@@ -6,7 +6,7 @@ a[href^="tel:"]::before,
 
 // Menu
 .menu-button::before,
-.menu-social li a::before,
+.menu-social-container li a::before,
 
 // Search
 .search-form button::before,
@@ -87,55 +87,36 @@ a[href^="tel:"]::before {
 }
 
 
-
-/* Menu Icon
+/* Menu Icons
 ---------------------- */
-.menu-button::before {
-	content: "\f419";
-}
 
-.menu-social li {
-	display:  inline-block;
-	position: relative;
+/* Social Icons */
+// Icons meant to be boxed in
+$icons: (
+	"digg.com": "\f1a6",
+	"dribbble.com": "\f17d",
+	"dropbox.com": "\f16b",
+	"facebook.com": "\f09a",
+	"flickr.com": "\f16e",
+	"plus.google.com": "\f0d5",
+	"github.com": "\f09b",
+	"instagram.com": "\f16d",
+	"linkedin.com": "\f0e1",
+	"pinterest.com": "\f0d2",
+	"reddit.com": "\f1a1",
+	"skype.com": "\f17e",
+	"stumbleupon.com": "\f1a4",
+	"tumblr.com": "\f214",
+	"twitter.com":  "\f099",
+	"vimeo.com": "\f194",
+	"vine.com": "\f1ca",
+	"wordpress.com": "\f19a",
+	"youtube.com": "\f167"
+);
+
+@each $social,$icon in $icons {
+	.menu-social-container li a[href*="#{$social}"]:before { content: $icon;}
 }
-.menu-social li a {
-	background: $footer-widgets-border-color;
-	border-radius: 50%;
-	display: inline-block;
-}
-.menu-social li a:hover {
-	background: $fog;
-}
-.menu-social li a::before{
-	color: $white;
-	display: inline-block;
-	font-size: 18px;
-	line-height: 32px;
-	width: 32px;
-	height: 32px;
-}
-.menu-social li a[href*="codepen.io"]::before      { content: '\f1cb'; }
-.menu-social li a[href*="digg.com"]::before        { content: '\f1a6'; }
-.menu-social li a[href*="dribbble.com"]::before    { content: '\f17d'; }
-.menu-social li a[href*="dropbox.com"]::before     { content: '\f16b'; }
-.menu-social li a[href*="facebook.com"]::before    { content: '\f09a'; }
-.menu-social li a[href*="flickr.com"]::before      { content: '\f16e'; }
-.menu-social li a[href*="plus.google.com"]::before { content: '\f0d5'; }
-.menu-social li a[href*="github.com"]::before      { content: '\f09b'; }
-.menu-social li a[href*="instagram.com"]::before   { content: '\f16d'; }
-.menu-social li a[href*="linkedin.com"]::before    { content: '\f0e1'; }
-.menu-social li a[href*="pinterest.com"]::before   { content: '\f0d2'; }
-.menu-social li a[href*="reddit.com"]::before      { content: '\f1a1'; }
-.menu-social li a[href*="skype.com"]::before,
-.menu-social li a[href*="skype:"]::before          { content: '\f17e'; }
-.menu-social li a[href*="stumbleupon.com"]::before { content: '\f1a4'; }
-.menu-social li a[href*="tumblr.com"]::before      { content: '\f214'; }
-.menu-social li a[href*="twitter.com"]::before     { content: '\f099'; }
-.menu-social li a[href*="vimeo.com"]::before       { content: '\f194'; }
-.menu-social li a[href*="vine.com"]::before        { content: '\f1ca'; }
-.menu-social li a[href*="wordpress.org"]::before,
-.menu-social li a[href*="wordpress.com"]::before   { content: '\f19a'; }
-.menu-social li a[href*="youtube.com"]::before     { content: '\f167'; }
 
 /* Search Icon
 ---------------------- */
